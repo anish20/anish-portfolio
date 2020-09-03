@@ -12,7 +12,7 @@ $(document).ready(function(){
 
     var elems = document.querySelectorAll('.fixed-action-btn');
     var instances = M.FloatingActionButton.init(elems, {
-      direction: 'right'
+      direction: 'left'
     });
       
       $('.tooltipped').tooltip();

@@ -123,6 +123,13 @@
      /* left: 32px !important; */
  }
 
+/* #bg-cover{
+    background: url(../images/Programmer.png) no-repeat;
+   
+    background-position-x: right 50%;
+} */
+
+
  #toTop {
     display:none;
     text-decoration:none;

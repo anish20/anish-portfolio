@@ -54,7 +54,7 @@
           <img src="images/anish-img.jpg " alt="" class="circle responsive-img z-depth-4 img-custom hoverable " > <!-- notice the "circle" class -->
         <div class="profile-content">
           <h2 id="profile-role">Software Engineer</h2>
-        <p class="" id="profile">Profile :<span id="profile-atr"></span></p>
+        <p class="" id="profile" style="font-weight: bold;">Profile :<span id="profile-atr"></span></p>
         <p class="social-icon">
             <a class="btn-floating btn-small waves-effect waves-light s-icon bg-facebook" style="background: #3b5998;" href="https://www.facebook.com/anish.mo.1" target="_blank"><i class="fa fa-facebook"></i></a>
             <a class="btn-floating btn-small waves-effect waves-light s-icon bg-twitter" style="background: #00acee;" href="https://twitter.com/@Anish15786" target="_blank"><i class="fa fa-twitter "></i></a>
@@ -76,12 +76,12 @@
     
   <!--Contents-->
   <div class="contents">
-      <section class="container" id="intro-section">
+      <section class="container"  id="intro">
         <div class="row" >
             <h4 class="center">Introduction</h4>
             <div class="col s4 m4 l4 offset-l4 offset-s4 offset-m4"><hr></div>
         </div>
-        <div class="card hoverable" >
+        <div class="card hoverable" id="intro-section">
            <div class="card-content">
             Welcome! My name is Anish. I am a Software Developer also Web designer.i loves to coding like as Back-End and Front-End designing.i always want to new creativity in software development whether Web Application, Windows Application , Programming challenges.I express my creativity through technology and enjoy creating innovative solutions to problems. I am eager to embrace new ideas, methodologies and technologies to expand my knowledge
            </div>
@@ -94,7 +94,7 @@
             <h4 class="center" >Career Objective </h4>
             <div class="col s4 m4 l4 offset-l4 offset-s4 offset-m4"><hr></div>
         </div>
-        <div class="card hoverable">
+        <div class="card hoverable" id="careerobjectives">
            <div class="card-content">
             My career goal is to become associated with a IT company as a Software Developer where I can utilize my technical skills set to a big project with teamwork and gain further experience while enhancing the company's productivity and reputation.
            </div>
@@ -107,7 +107,7 @@
             <h4 class="center">Technical Key Skills </h4>
             <div class="col s4 m4 l4 offset-l4 offset-s4 offset-m4"><hr></div>
         </div>
-        <div class="card ">
+        <div class="card " id="skillset">
            <div class="card-content">
             <ul class="collection hoverable ">
                 <li class="collection-item avatar">
@@ -220,7 +220,7 @@
             <h4 class="center">Working Experience</h4>
             <div class="col s4 m4 l4 offset-l4 offset-s4 offset-m4"><hr></div>
         </div>
-        <div class="card hoverable">
+        <div class="card hoverable" id="experience">
            <div class="card-content">
             <ul class="experience-list">
                 <li><i class="fa fa-hand-o-right "></i><span>I have 6 Month Experience as Customer Support Role at Serco PVT LTD in Guragon.</span></li>
@@ -240,7 +240,7 @@
         <h4 class="center">Job Responsibilty</h4>
         <div class="col s4 m4 l4 offset-l4 offset-s4 offset-m4"><hr></div>
     </div>
-    <div class="card hoverable">
+    <div class="card hoverable" id="resp">
        <div class="card-content">
         <ul class="experience-list">
             <li><i class="fa fa-hand-o-right "></i><span>Responsible for Front-End Design which attractive looking User-Interface with full responsive by Bootstrap,HTML,CSS,Materialize css,JQuery.</span></li>
@@ -263,11 +263,11 @@
         <h4 class="center">Our Projects</h4>
         <div class="col s4 m4 l4 offset-l4 offset-s4 offset-m4"><hr></div>
     </div>
-    <div class="card hoverable">
+    <div class="card hoverable" id="myproject">
        <div class="card-content">
         <div class="row">
             <div class="col m4 s12 l4">
-                <div class="card hoverable">
+                <div class="card hoverable" >
                     <div class="card-image waves-effect waves-block waves-light" style="height: 180px;">
                         <div class="carousel carousel-slider">
                             <a class="carousel-item" href="#one!"><img class="activator responsive-img" src="images/project-image/portfolio/1.PNG" ></a>
@@ -429,6 +429,7 @@
      <script type="text/javascript" src="js/easing.js"></script>
      <script type="text/javascript" src="js/move-top.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous"></script>
 
      
     <script>
@@ -436,7 +437,7 @@
       let loder=$("#preloader");
       setTimeout(()=>{
         loder.css("display","none");
-      },2000)
+      },1000)
     }
 
     $(function() {
@@ -449,7 +450,59 @@
                 });
 
               });
+
+              // $(document).ready(()=>{
+              //       var waypoint = new Waypoint({
+              //       element: document.getElementById('px-offset-waypoint'),
+              //       handler: function(direction) {
+              //       },
+              //       offset: 20 
+              //     })
+              // });
+
+              //add waypoint effect in itroduction section
+
+              $("#intro").waypoint(function(direction){
+                $("#intro-section").addClass("animate__animated animate__fadeInDown");
+              },
+              {offset:'100px'}
+              );
+
+              //careeer objective
+              $("#careerobjective").waypoint(function(direction){
+                $("#careerobjectives").addClass("animate__animated animate__fadeInRight");
+              },
+              {offset:'100px'}
+              );
+
+              // skillset
+
+              $("#skills").waypoint(function(direction){
+                $("#skillset").addClass("animate__animated animate__fadeInRight");
+              },
+              {offset:'100px'}
+              );
     
+              //experience
+              $("#workexperience").waypoint(function(direction){
+                $("#experience").addClass("animate__animated animate__fadeInRight");
+              },
+              {offset:'100px'}
+              );
+    
+              //respomsiblity
+                $("#jobresponsibility").waypoint(function(direction){
+                $("#resp").addClass("animate__animated animate__fadeInRight");
+              },
+              {offset:'100px'}
+              );
+
+              // //cards porject
+              // $("#ourproject").waypoint(function(direction){
+              //   $("#myproject").addClass("animate__animated animate__zoomIn");
+              // },
+              
+              
     </script>
 </body>
 </html>

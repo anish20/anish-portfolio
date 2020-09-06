@@ -20,15 +20,16 @@
   <title>Portfolio </title>
   
 </head>
-<body>
+<body onload="myFunction()">
+  <div id="preloader"></div>
   <!--Header-->
-    <div class=" navbar-fixed">
+    <div class=" navbar-fixed" style="bottom: 0;">
    <nav class="pink darken-2">
         <div class="nav-wrapper container">
           <a href="/" class="brand-logo">Perspective</a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down ">
-            <li><a class="waves-effect waves-default" href="#home">Home</a></li>
+            <li><a class="waves-effect waves-default" id="homeclick" href="#home">Home</a></li>
             <li><a class="waves-effect waves-default" href="#careerobjective">Career Objective</a></li>
             <li><a class="waves-effect waves-default" href="#skills">Skills</a></li>
             <li><a class="waves-effect waves-default" href="#">Gallery</a></li>
@@ -52,8 +53,8 @@
         <div class="center-align custom-profile " >
           <img src="images/anish-img.jpg " alt="" class="circle responsive-img z-depth-4 img-custom hoverable " > <!-- notice the "circle" class -->
         <div class="profile-content">
-          <h2 class="animate__animated animate__backInDown">Software Engineer</h2>
-        <p class="animate__animated animate__lightSpeedInRight">Profile : Web Developer and Web Designer</p>
+          <h2 id="profile-role">Software Engineer</h2>
+        <p class="" id="profile">Profile :<span id="profile-atr"></span></p>
         <p class="social-icon">
             <a class="btn-floating btn-small waves-effect waves-light s-icon bg-facebook" style="background: #3b5998;" href="https://www.facebook.com/anish.mo.1" target="_blank"><i class="fa fa-facebook"></i></a>
             <a class="btn-floating btn-small waves-effect waves-light s-icon bg-twitter" style="background: #00acee;" href="https://twitter.com/@Anish15786" target="_blank"><i class="fa fa-twitter "></i></a>
@@ -75,12 +76,12 @@
     
   <!--Contents-->
   <div class="contents">
-      <section class="container">
-        <div class="row">
+      <section class="container" id="intro-section">
+        <div class="row" >
             <h4 class="center">Introduction</h4>
             <div class="col s4 m4 l4 offset-l4 offset-s4 offset-m4"><hr></div>
         </div>
-        <div class="card hoverable">
+        <div class="card hoverable" >
            <div class="card-content">
             Welcome! My name is Anish. I am a Software Developer also Web designer.i loves to coding like as Back-End and Front-End designing.i always want to new creativity in software development whether Web Application, Windows Application , Programming challenges.I express my creativity through technology and enjoy creating innovative solutions to problems. I am eager to embrace new ideas, methodologies and technologies to expand my knowledge
            </div>
@@ -214,7 +215,7 @@
         </div>
       </section>
       <!--Working Experience-->
-      <section class="container">
+      <section class="container" id="workexperience">
         <div class="row">
             <h4 class="center">Working Experience</h4>
             <div class="col s4 m4 l4 offset-l4 offset-s4 offset-m4"><hr></div>
@@ -234,7 +235,7 @@
 
 
 <!--Job Responsibilitis-->
-<section class="container">
+<section class="container" id="jobresponsibility">
     <div class="row">
         <h4 class="center">Job Responsibilty</h4>
         <div class="col s4 m4 l4 offset-l4 offset-s4 offset-m4"><hr></div>
@@ -257,7 +258,7 @@
   </section>
 
   <!--Our Project-->
-<section class="container">
+<section class="container" id="ourproject">
     <div class="row">
         <h4 class="center">Our Projects</h4>
         <div class="col s4 m4 l4 offset-l4 offset-s4 offset-m4"><hr></div>
@@ -383,7 +384,7 @@
 
 <!--Important links-->
 
- <section class="container">
+ <section class="container" id="iplink">
     <div class="row">
         <h4 class="center">Important Links</h4>
         <div class="col s4 m4 l4 offset-l4 offset-s4 offset-m4"><hr></div>
@@ -427,7 +428,28 @@
      <script type="text/javascript" src="js/custom.js"></script>
      <script type="text/javascript" src="js/easing.js"></script>
      <script type="text/javascript" src="js/move-top.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+
      
+    <script>
+      function myFunction(){
+      let loder=$("#preloader");
+      setTimeout(()=>{
+        loder.css("display","none");
+      },2000)
+    }
+
+    $(function() {
+
+                $("#profile-atr").typed({
+                  strings: ["Web Developer","Web Designer"], //Headlines(Change It)
+                  loop: true,
+                  startDelay: 1e3,
+                  backDelay: 2e3
+                });
+
+              });
     
+    </script>
 </body>
 </html>
